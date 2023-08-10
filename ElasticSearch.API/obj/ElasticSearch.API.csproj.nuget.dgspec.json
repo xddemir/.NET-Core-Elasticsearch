@@ -1,26 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/ElasticSearch.API.csproj": {}
+    "C:\\Users\\doguk\\Desktop\\NET-Core-Elasticsearch-master\\.NET-Core-Elasticsearch-master\\ElasticSearch.API\\ElasticSearch.API.csproj": {}
   },
   "projects": {
-    "/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/ElasticSearch.API.csproj": {
+    "C:\\Users\\doguk\\Desktop\\NET-Core-Elasticsearch-master\\.NET-Core-Elasticsearch-master\\ElasticSearch.API\\ElasticSearch.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/ElasticSearch.API.csproj",
+        "projectUniqueName": "C:\\Users\\doguk\\Desktop\\NET-Core-Elasticsearch-master\\.NET-Core-Elasticsearch-master\\ElasticSearch.API\\ElasticSearch.API.csproj",
         "projectName": "ElasticSearch.API",
-        "projectPath": "/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/ElasticSearch.API.csproj",
-        "packagesPath": "/Users/xddemir/.nuget/packages/",
-        "outputPath": "/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/obj/",
+        "projectPath": "C:\\Users\\doguk\\Desktop\\NET-Core-Elasticsearch-master\\.NET-Core-Elasticsearch-master\\ElasticSearch.API\\ElasticSearch.API.csproj",
+        "packagesPath": "C:\\Users\\doguk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\doguk\\Desktop\\NET-Core-Elasticsearch-master\\.NET-Core-Elasticsearch-master\\ElasticSearch.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/xddemir/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\doguk\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "/Users/xddemir/.dotnet/sdk/7.0.306/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/xddemir/.dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }
