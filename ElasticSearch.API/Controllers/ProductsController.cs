@@ -7,7 +7,7 @@ namespace ElasticSearch.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ProductsController : ControllerBase
+public class ProductsController : BaseController
 {
     private readonly ProductService _productService;
 
@@ -19,6 +19,30 @@ public class ProductsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Save(ProductCreateDto request)
     {
-        return Ok(await _productService.SaveAsync(request));
+        return CreateActionResult(await _productService.SaveAsync(request));
+    }
+    
+    [HttpPut]
+    public async Task<IActionResult> Update(ProductUpdateDto request)
+    {
+        return CreateActionResult(await _productService.UpdateAsync(request));  
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAll()
+    {
+        return CreateActionResult(await _productService.GetAllAsync());
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(string id)
+    {
+        return CreateActionResult(await _productService.GetProductByIdAsync(id));
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete(string id)
+    {
+        return CreateActionResult(await _productService.DeleteAsync(id));
     }
 }
