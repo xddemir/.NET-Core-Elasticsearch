@@ -1,5 +1,6 @@
 ﻿using System.Collections.Immutable;
 using System.Net;
+using Elastic.Clients.Elasticsearch;
 using ElasticSearch.API.DTOs;
 using ElasticSearch.API.Models;
 using ElasticSearch.API.Repository;
@@ -9,6 +10,7 @@ namespace ElasticSearch.API.Services;
 public class ProductService
 {
     private readonly ProductRepository _productRepository;
+    private readonly ILogger<ProductService> _logger;
 
     public ProductService(ProductRepository productRepository)
     {
@@ -57,17 +59,27 @@ public class ProductService
         var responseProducts = await _productRepository.UpdateAsync(productUpdateDto);
 
         if (!responseProducts)
+        {
             return ResponseDto<bool>.Fail("error occurred during update", HttpStatusCode.InternalServerError);
+        }
 
         return ResponseDto<bool>.Success(true, HttpStatusCode.NoContent);
     }
 
     public async Task<ResponseDto<bool>> DeleteAsync(string id)
     {
-        var isDeleted = await _productRepository.DeleteAsync(id);
+        var response = await _productRepository.DeleteAsync(id);
         
-        if (!isDeleted)
-            return ResponseDto<bool>.Fail("service is unable to delete", HttpStatusCode.InternalServerError);
+        if (!response.IsValidResponse && response.Result == Result.NotFound){
+            return ResponseDto<bool>.Fail("item not found", HttpStatusCode.NotFound);
+        }
+
+        if (!response.IsValidResponse)
+        {
+            response.TryGetOriginalException(out Exception? exception);
+            _logger.LogError(exception, response.ElasticsearchServerError.Error.ToString());
+            return ResponseDto<bool>.Fail("unable to delete item", HttpStatusCode.InternalServerError);
+        }
         
         return ResponseDto<bool>.Success(true, HttpStatusCode.NoContent);
     }

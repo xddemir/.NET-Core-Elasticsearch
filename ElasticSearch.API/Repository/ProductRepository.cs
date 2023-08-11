@@ -1,15 +1,15 @@
 using System.Collections.Immutable;
+using Elastic.Clients.Elasticsearch;
 using ElasticSearch.API.DTOs;
 using ElasticSearch.API.Models;
-using Nest;
 
 namespace ElasticSearch.API.Repository;
 
 public class ProductRepository
 {
-    private readonly ElasticClient _client;
+    private readonly ElasticsearchClient _client;
 
-    public ProductRepository(ElasticClient client)
+    public ProductRepository(ElasticsearchClient client)
     {
         _client = client;
     }
@@ -22,8 +22,8 @@ public class ProductRepository
         var response = await _client.IndexAsync(newProduct, 
             x => x.Index("products")
             .Id(Guid.NewGuid().ToString()));
-
-        if (!response.IsValid) return null;
+    
+        if (!response.IsSuccess()) return null;
 
         newProduct.Id = response.Id;
 
@@ -45,26 +45,31 @@ public class ProductRepository
     {
         var response = await _client.GetAsync<Product>(id, x => x.Index("products"));
 
-        if (!response.IsValid) return null;
+        if (!response.IsSuccess()) return null;
         
         response.Source.Id = response.Id;
         
         return response.Source;
     }
 
-    public async Task<bool> DeleteAsync(string id)
+    public async Task<DeleteResponse> DeleteAsync(string id)
     {
-        var response = await _client.DeleteAsync<Product>(id, x => x.Index("products"));
-        return response.IsValid;
+        var response = await _client.DeleteAsync<Product>(
+            id, 
+            x => 
+                x.Index("products"));
+        return response;
     }
 
     public async Task<bool> UpdateAsync(ProductUpdateDto productUpdateDto)
     {
         var response = await _client
-            .UpdateAsync<Product, ProductUpdateDto>(productUpdateDto.Id,
-            x => x.Index("products").Doc(productUpdateDto));
-
-        return response.IsValid;
+            .UpdateAsync<Product, ProductUpdateDto>("" +
+                                                    "products", 
+                                                    productUpdateDto.Id, 
+                                        x => 
+                                                    x.Doc(productUpdateDto));
+        return response.IsSuccess();
     }
     
 }

@@ -31,8 +31,6 @@
 /Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/obj/Debug/net7.0/ElasticSearch.API.pdb
 /Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/obj/Debug/net7.0/ElasticSearch.API.genruntimeconfig.cache
 /Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/obj/Debug/net7.0/ref/ElasticSearch.API.dll
-/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/bin/Debug/net7.0/Elasticsearch.Net.dll
-/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/bin/Debug/net7.0/Nest.dll
 C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-master/ElasticSearch.API/bin/Debug/net7.0/appsettings.Development.json
 C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-master/ElasticSearch.API/bin/Debug/net7.0/appsettings.json
 C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-master/ElasticSearch.API/bin/Debug/net7.0/ElasticSearch.API.exe
@@ -68,3 +66,5 @@ C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-mas
 C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-master/ElasticSearch.API/obj/Debug/net7.0/ElasticSearch.API.pdb
 C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-master/ElasticSearch.API/obj/Debug/net7.0/ElasticSearch.API.genruntimeconfig.cache
 C:/Users/doguk/Desktop/NET-Core-Elasticsearch-master/.NET-Core-Elasticsearch-master/ElasticSearch.API/obj/Debug/net7.0/ref/ElasticSearch.API.dll
+/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/bin/Debug/net7.0/Elastic.Clients.Elasticsearch.dll
+/Users/xddemir/RiderProjects/ElasticSearch.API/ElasticSearch.API/bin/Debug/net7.0/Elastic.Transport.dll
