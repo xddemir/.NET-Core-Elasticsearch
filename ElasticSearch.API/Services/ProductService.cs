@@ -22,7 +22,7 @@ public class ProductService
         if (response == null)
             return ResponseDto<ProductDto>.Fail(new List<string> { "an error occured" },
                 HttpStatusCode.ServiceUnavailable);
-
+ 
         return ResponseDto<ProductDto>.Success(response.CreateDto(), HttpStatusCode.Created);
     }
     
