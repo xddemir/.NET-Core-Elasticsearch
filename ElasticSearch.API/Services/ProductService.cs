@@ -58,8 +58,7 @@ public class ProductService
     {
         var responseProducts = await _productRepository.UpdateAsync(productUpdateDto);
 
-        if (!responseProducts)
-        {
+        if (!responseProducts) {
             return ResponseDto<bool>.Fail("error occurred during update", HttpStatusCode.InternalServerError);
         }
 

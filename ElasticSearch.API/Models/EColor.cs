@@ -2,5 +2,5 @@ namespace ElasticSearch.API.Models;
 
 public enum EColor
 {
-    Red, Blue, Green
+    Red= 1, Blue = 2, Green = 3
 }

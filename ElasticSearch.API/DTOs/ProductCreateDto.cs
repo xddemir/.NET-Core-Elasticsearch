@@ -12,7 +12,7 @@ public record ProductCreateDto(string Name, decimal Price, int Stock, ProductFea
             Stock = Stock,
             Feature = new ProductFeature{Width = Feature.Width,
                 Height = Feature.Height,
-                Color = (EColor)Enum.Parse(typeof(EColor), Feature.Color)} };
+                Color = ((EColor)Enum.Parse(typeof(EColor), Feature.Color))} };
 
         return p;
     }
