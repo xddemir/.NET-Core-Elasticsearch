@@ -18,6 +18,9 @@ public class ECommerce
     
     [JsonPropertyName("category")]
     public string[] Category { get; set; } = null;
+
+    [JsonPropertyName("taxful_total_price")]
+    public double TaxFulTotalPrice { get; set; }
     
     [JsonPropertyName("order_id")]
     public int OrderId { get; set; } 
