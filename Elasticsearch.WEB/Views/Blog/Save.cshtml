@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Save";
+}
+@model Elasticsearch.WEB.ViewModel.BlogCreateViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        @if (TempData["result"] != null)
+        {
+            <div class="alert alert-info">
+                @TempData["result"]
+            </div>
+        }
+        <h3>Blog Create</h3>
+        <form asp-action="Save">
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label">Title</label>
+                <input asp-for="Title" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label asp-for="Content" class="form-label">Content</label>
+                <textarea asp-for="Content" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Tags" class="form-label">Tags</label>
+                <textarea asp-for="Tags" class="form-control" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="submit">Save</button>
+            </div>
+
+
+
+        </form>
+
+    </div>
+</div>
+</body>
+</html>

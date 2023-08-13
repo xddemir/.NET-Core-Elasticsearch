@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "s2gS/1m3sIvafQQ6HQ9WE+6d4sD/wNOXZLrEZTdmnrPIZ6f3iuRB5Y8Vlwd9zc399gVPl1vBobawkkhMqrT0SA==",
+  "success": true,
+  "projectFilePath": "/Users/xddemir/RiderProjects/ElasticSearch.API/Elasticsearch.WEB/Elasticsearch.WEB.csproj",
+  "expectedPackageFiles": [
+    "/Users/xddemir/.nuget/packages/elastic.clients.elasticsearch/8.9.1/elastic.clients.elasticsearch.8.9.1.nupkg.sha512",
+    "/Users/xddemir/.nuget/packages/elastic.transport/0.4.14/elastic.transport.0.4.14.nupkg.sha512"
+  ],
+  "logs": []
+}
