@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Search";
+}
+
+@model List<Blog>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-10 offset-md-1">
+        <form asp-action="Search">
+            <div class="mb-3">
+                
+                <label>Search(Title,Content)</label>
+                <input name="searchText" class="form-control"/>
+            </div>
+            <button type="submit">Search</button>
+        </form>
+        
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info">Not Found</div>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>User Id</th>
+                    <th>Created</th>
+                    <th>Tags</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                   @foreach (var blog in Model)
+                        {
+                            <tr>@blog.Id</tr>
+                            <tr>@blog.Title</tr>
+                            <tr>@blog.Content</tr>
+                            <tr>@blog.UserId</tr>
+                            <tr>@blog.Created.ToShortDateString()</tr>
+                            <tr>@String.Join(",", blog.Tags)</tr>
+                        }
+                </tbody>
+         
+            </table>
+        }
+        
+    </div>
+</div>
+</body>
+</html>
