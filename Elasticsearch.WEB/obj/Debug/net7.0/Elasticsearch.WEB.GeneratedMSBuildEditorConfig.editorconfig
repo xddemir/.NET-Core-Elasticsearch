@@ -16,8 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/xddemir/RiderProjects/ElasticSearch.API/Elasticsearch.WEB
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/xddemir/RiderProjects/ElasticSearch.API/Elasticsearch.WEB/Pages/ECommerce/Search.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRUNvbW1lcmNlL1NlYXJjaC5jc2h0bWw=
+[/Users/xddemir/RiderProjects/ElasticSearch.API/Elasticsearch.WEB/Views/ECommerce/Search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRUNvbW1lcmNlL1NlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/xddemir/RiderProjects/ElasticSearch.API/Elasticsearch.WEB/Views/Blog/Save.cshtml]

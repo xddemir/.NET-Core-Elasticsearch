@@ -28,6 +28,7 @@ public class ECommerce
     [JsonPropertyName("order_id")]
     public int OrderId { get; set; } 
     
+    [JsonPropertyName("order_date")]
     public DateTime OrderDate { get; set; }
     
     [JsonPropertyName("products")] 

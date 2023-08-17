@@ -10,4 +10,8 @@
       <PackageReference Include="Elastic.Clients.Elasticsearch" Version="8.9.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Views\ECommerce\Search.cshtml" />
+    </ItemGroup>
+
 </Project>

@@ -22,6 +22,12 @@ public class ECommerceRepository
     {
         List<Action<QueryDescriptor<ECommerce>>> listQuery = new();
 
+        if (searchViewModel is null)
+        {
+            listQuery.Add(q => q.MatchAll());
+            return await CalculatePage(page, pageSize, listQuery);
+        }
+
         if (!string.IsNullOrEmpty(searchViewModel.CategoryName))
         {
             // Full text query - CategoryName
@@ -60,20 +66,32 @@ public class ECommerceRepository
         if (!string.IsNullOrEmpty(searchViewModel.Gender))
         {
             listQuery.Add(q => q.Term(t => 
-                t.Field(tf => tf.Gender).Value(searchViewModel.Gender)));
+                t.Field(tf => tf.Gender).Value(searchViewModel.Gender).CaseInsensitive()));
         }
 
+        if (!listQuery.Any())
+        {
+            listQuery.Add(q => q.MatchAll());
+        }
+
+        return await CalculatePage(page, pageSize, listQuery);
+
+
+    }
+
+    private async Task<(List<ECommerce> list, long count)> CalculatePage(int page, int pageSize, 
+        List<Action<QueryDescriptor<ECommerce>>> listQuery)
+    {
         var pageFrom = (page - 1) * pageSize;
         var result = await _client.SearchAsync<ECommerce>(s =>
             s.Index(indexName).Size(pageSize)
                 .From(pageFrom)
                 .Query(q => q
-                .Bool(b => b
-                .Must(listQuery.ToArray()))));
+                    .Bool(b => b
+                        .Must(listQuery.ToArray()))));
 
         foreach (var hit in result.Hits) hit.Source.Id = hit.Id;
 
         return (list: result.Documents.ToList(), result.Total);
-
     }
 }
